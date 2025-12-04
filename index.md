@@ -32,6 +32,8 @@ My research interest focus on bidirectional influence in human-AI collaboration:
   </div>
 </div>
 
+<br>
+
 <div class="project-row">
   <div class="project-year">
     Jan. 2025 – Present
@@ -48,6 +50,8 @@ My research interest focus on bidirectional influence in human-AI collaboration:
     </div>
   </div>
 </div>
+
+<br>
 
 <div class="project-row">
   <div class="project-year">
