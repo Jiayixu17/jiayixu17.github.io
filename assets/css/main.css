@@ -392,6 +392,6 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-w
 .content,
 .wrapper,
 .container {
-    max-width: 1000px !important;
+    max-width: 1600px !important;
     margin: 0 auto !important;
 }
