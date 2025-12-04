@@ -7,7 +7,7 @@
   --accent: #293241;      
   --accent-soft: #ee6c4d;  
   --border: #98c1d9;
-  --highlight: #ee6c4d;
+  --highlight: #ee6c4d;   /* 强调色，可与 accent-soft 分开调整 */
   --max-width: 1200px;
 }
 
@@ -205,9 +205,14 @@ li {
   color: var(--muted);
 }
 
+/* 如果以后不再用 <p class="project-summary">，这一块可以不用 */
+/*
 .project-summary {
   margin: 0 0 6px;
 }
+*/
+
+/* 折叠的项目简介 */
 
 .project-details {
   margin: 4px 0 6px;
@@ -239,11 +244,13 @@ li {
   margin: 6px 0 0;
 }
 
+/* 发表信息 / working paper 信息区域 */
+
 .project-extra {
   margin-top: 6px;
   padding: 6px 10px;
   border-radius: 6px;
-  background-color: var(--accent-soft);  /* 浅紫底 */
+  background-color: var(--accent-soft);
   font-size: 0.95em;
   color: var(--muted);
 }
@@ -257,7 +264,8 @@ li {
   color: var(--accent);
 }
 
-.project-links {
+/* 统一的 project 链接样式（替代原来的 .project-links + .project-link 混用） */
+.project-link {
   color: var(--accent);
   font-weight: 500;
   text-decoration: underline;
@@ -266,6 +274,7 @@ li {
 .project-link:hover {
   text-decoration: none;
 }
+
 /* 合作者/导师链接样式 */
 
 .coauthor {
@@ -286,12 +295,14 @@ li {
 }
 
 /* 强调文字 */
+
 .text-highlight {
   color: var(--highlight);
   font-weight: 600;
 }
 
 /* 强调 badge 标签 */
+
 .badge-highlight {
   display: inline-block;
   background-color: var(--highlight);
