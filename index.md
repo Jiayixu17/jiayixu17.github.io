@@ -13,9 +13,7 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 
 ---
 
-### Working Projects
-
-### Working Projects
+### Research Projects
 
 <div class="project-row">
   <div class="project-year">
