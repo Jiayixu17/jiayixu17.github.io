@@ -209,11 +209,63 @@ li {
   margin: 0 0 6px;
 }
 
-.project-links {
-  margin: 0;
-  font-size: 0.95em;
+.project-details {
+  margin: 4px 0 6px;
 }
 
+.project-details > summary {
+  cursor: pointer;
+  list-style: none;              /* 去掉默认的小三角样式（部分浏览器） */
+  font-size: 0.95em;
+  color: var(--muted);
+  position: relative;
+  padding-left: 16px;
+}
+
+.project-details > summary::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+
+.project-details[open] > summary::before {
+  content: "▾";
+}
+
+.project-details p {
+  margin: 6px 0 0;
+}
+
+.project-extra {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: var(--accent-soft);  /* 浅紫底 */
+  font-size: 0.95em;
+  color: var(--muted);
+}
+
+.project-extra-line + .project-extra-line {
+  margin-top: 2px;
+}
+
+.project-venue {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.project-links {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.project-link:hover {
+  text-decoration: none;
+}
 /* 合作者/导师链接样式 */
 
 .coauthor {
