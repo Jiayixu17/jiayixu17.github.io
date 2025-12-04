@@ -431,3 +431,36 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.3px;
     color: #111 !important;
 }
+
+/* ===== Working Projects layout ===== */
+.project-row {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr); /* 左：时间 右：内容 */
+    column-gap: 24px;
+    row-gap: 2px;
+    margin-bottom: 16px;     /* 每条项目之间的间距 */
+}
+
+.project-year {
+    font-weight: 600;
+    color: #444;
+    white-space: nowrap;      /* 避免时间自己乱换行 */
+}
+
+.project-main {
+    line-height: 1.4;
+}
+
+.project-title {
+    font-weight: 700;
+}
+
+.project-supervisor {
+    font-size: 0.95em;
+    margin-top: 2px;
+}
+
+.project-link {
+    margin-top: 2px;
+    font-size: 0.95em;
+}
