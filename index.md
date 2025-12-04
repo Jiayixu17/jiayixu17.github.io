@@ -22,7 +22,7 @@ My research interest focus on bidirectional influence in human-AI collaboration:
   
   <div>
     <strong>Cultural and Linguistic Influences on LLM Responses</strong><br>
-    Supervised by <a href="https://xiyanghu.github.io/" target="_blank" style="font-style:italic;">Prof.Xiyang Hu</a><br>
+    Supervised by <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof.Xiyang Hu</a><br>
     <a href="#">Read More</a>
   </div>
 
@@ -35,7 +35,7 @@ My research interest focus on bidirectional influence in human-AI collaboration:
   
   <div>
     <strong>AI-generated Stories for Emotional Support</strong><br>
-    Supervised by <a href="https://sites.google.com/view/yifan-yu/home?authuser=0" target="_blank" style="font-style:italic;">Prof.Yifan Yu</a><br>
+    Supervised by <a class="coauthor" href="https://sites.google.com/view/yifan-yu/home?authuser=0" target="_blank">Prof.Yifan Yu</a><br>
     <a href="#">Read More</a>
   </div>
 
@@ -48,7 +48,7 @@ My research interest focus on bidirectional influence in human-AI collaboration:
   
   <div>
     <strong>Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce</strong><br>
-    Supervised by <a href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank" style="font-style:italic;">Prof.Zhen Zhu</a><br>
+    Supervised by <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Prof.Zhen Zhu</a><br>
     <a href="#">Read More</a>
   </div>
 
