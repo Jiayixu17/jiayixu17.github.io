@@ -4,7 +4,7 @@ layout: page
 
 ### About Me
 
-Welcome to my personal website!
+My name is Jiayi Xu, currently a second-year master student 
 
 
 ---
