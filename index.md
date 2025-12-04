@@ -17,11 +17,12 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 
 <div style="display:flex; gap:20px;">
   <div style="min-width:140px; font-weight:bold;">
-    Jan. 2025 - Present
+    July. 2025 - Present
   </div>
   
   <div>
-    <strong>AI-generated Stories for Emotional Support</strong><br>
+    <strong>Cultural and Linguistic Influences on LLM Responses</strong><br>
+    Supervised by <a href="https://xiyanghu.github.io/" target="_blank" style="font-style:italic;">Prof.Xiyang Hu</a>
     <a href="#">Read More</a>
   </div>
 
@@ -29,11 +30,25 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 
 <div style="display:flex; gap:20px;">
   <div style="min-width:140px; font-weight:bold;">
-    July. 2025 - Present
+    Jan. 2025 - Present
   </div>
   
   <div>
-    <strong>Cultual and Linguistic Influence on LLM Response</strong><br>
+    <strong>AI-generated Stories for Emotional Support</strong><br>
+    Supervised by <a href="https://sites.google.com/view/yifan-yu/home?authuser=0" target="_blank" style="font-style:italic;">Prof.Yifan Yu</a>
+    <a href="#">Read More</a>
+  </div>
+
+</div>
+
+<div style="display:flex; gap:20px;">
+  <div style="min-width:140px; font-weight:bold;">
+    May. 2021 - May. 2023
+  </div>
+  
+  <div>
+    <strong>Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce</strong><br>
+    Supervised by <a href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank" style="font-style:italic;">Prof.Zhen Zhu</a>
     <a href="#">Read More</a>
   </div>
 
