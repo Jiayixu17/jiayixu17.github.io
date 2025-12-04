@@ -409,3 +409,18 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-w
     width: 100% !important;
     margin: 0 auto !important;
 }
+
+/* Styles for coauthor links */
+a.coauthor {
+    font-style: italic;
+    font-weight: 500;
+    color: #0047AB;
+    text-decoration: none;
+    border-bottom: 1px dashed #0047AB; 
+    padding-bottom: 1px;
+}
+
+a.coauthor:hover {
+    color: #002D72; 
+    border-bottom-style: solid; 
+}
