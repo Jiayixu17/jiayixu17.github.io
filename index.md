@@ -9,7 +9,7 @@ Hi! My name is **Jiayi Xu 徐嘉艺**. Currently, I am a second-year Master's st
 My research interest focus on bidirectional influence in human-AI collaboration:
 
 * **AI➜Human**: How AI shapes human emotion, cognition, and decision-making process.
-* **Human➜AI**: How cultural values and social norms from human society are embedded in AI behavior and application.
+* **Human➜AI**: How cultural values and social norms from human society are embedded in AI and affect their behavior and applications.
 
 ---
 
