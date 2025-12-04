@@ -5,6 +5,7 @@ layout: page
 ### About Me
 
 Hi! My name is **Jiayi Xu 徐嘉艺**. Currently, I am a second-year Master's student in **Statistics & Operations Research** at UNC-Chapel Hill.
+
 My research interest focus on bidirectional influence in human-AI collaboration:
 
 * AI->Human: How AI shapes human emotion, cognition, and decision-making process.
