@@ -1,16 +1,13 @@
-/* =========================
-   Global fonts & base styles
-   ========================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
 :root {
-  --bg: #fafafa;
-  --text: #222;
-  --muted: #666;
-  --accent: #0047ab;
-  --border: #e0e0e0;
-  --max-width: 1600px; /* 全站内容最大宽度，想更宽/更窄只改这里 */
+  /* 以后只要改这几个颜色变量，就能换整站配色 */
+  --bg: #f6f4fa;
+  --bg-card: #ffffff;
+  --text: #272238;
+  --muted: #7a738f;
+  --accent: #6c5b9c;       /* 深紫主色 */
+  --accent-soft: #e3ddff;  /* 浅莫兰迪紫 */
+  --border: #ded7f0;
+  --max-width: 1100px;
 }
 
 *,
@@ -19,342 +16,226 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-li,
-div,
-span {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Helvetica, Arial, sans-serif;
-}
-
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
 }
-
-/* Links */
 
 a {
   color: var(--accent);
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
-/* Images */
+/* 顶部导航 */
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Lists / paragraphs */
-
-p {
-  margin: 0 0 1em;
-}
-
-ul {
-  margin: 0 0 1em 1.2em;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 0.25em;
-}
-
-/* Headings */
-
-h1 {
-  font-size: 42px;
-  font-weight: 600;
-  margin: 0 0 16px;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 600;
-  margin: 32px 0 12px;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 24px 0 10px;
-}
-
-h4,
-h5,
-h6 {
-  font-size: 20px;
-  font-weight: 500;
-  margin: 20px 0 8px;
-}
-
-/* Horizontal rule */
-
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 24px 0;
-}
-
-/* =========================
-   Top navigation
-   ========================= */
-
-.navigation-wrapper {
-  width: 100%;
-  border-bottom: 1px solid var(--border);
+.site-header {
   background-color: #fff;
+  border-bottom: 1px solid var(--border);
 }
 
-.navigation-inner {
+.nav-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 12px 16px 8px;
+  padding: 10px 16px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
-/* 你的模板中 site-name 和 top-navigation 是直接放在 navigation-wrapper 里的，
-   所以用子元素选择器即可兼容 */
-.navigation-wrapper > .site-name,
-.navigation-wrapper > .top-navigation {
-  margin: 0;
-}
-
-/* Left: name */
-
-.site-name {
-  font-size: 20px;
+.nav-logo {
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
+  font-size: 16px;
 }
 
-/* Right: nav menu */
-
-.top-navigation {
-  list-style: none;
+.nav-main {
   display: flex;
   gap: 24px;
-  padding: 0;
-  margin: 0;
-  text-transform: uppercase;
+}
+
+.nav-link {
   font-size: 15px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
 
-.top-navigation li {
-  margin: 0;
+.nav-link-active,
+.nav-link:hover {
+  border-bottom-color: var(--accent);
 }
 
-.top-navigation li a {
-  color: var(--text);
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
+/* 页面主体 */
 
-.top-navigation li a:hover {
-  text-decoration: underline;
-}
-
-/* 如果你的模板不是 navigation-inner 这一层，而是直接 site-name + top-navigation，
-   下面这个确保宽度对齐正文 */
-.navigation-wrapper {
-  max-width: 100%;
-}
-
-@media (min-width: 900px) {
-  .navigation-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  .site-name,
-  .top-navigation {
-    max-width: var(--max-width);
-  }
-}
-
-/* =========================
-   Main layout (sidebar + content)
-   ========================= */
-
-#main {
-  width: 100%;
-}
-
-#main article {
+.page {
   max-width: var(--max-width);
   margin: 24px auto 40px;
-  padding: 0 16px 16px;
+  padding: 0 16px;
+}
+
+/* 通用 section */
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section-inner {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 20px 20px 24px;
+}
+
+/* About 区域：头像 + 文字两列 */
+
+.section-about {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr); /* 左侧栏 + 右正文 */
-  column-gap: 40px;
+  grid-template-columns: 220px minmax(0, 1fr);
+  column-gap: 24px;
   align-items: flex-start;
 }
 
-/* 手机 / 小屏幕：上下排列 */
-
-@media (max-width: 899px) {
-  #main article {
+@media (max-width: 800px) {
+  .section-about {
     grid-template-columns: 1fr;
-    row-gap: 24px;
-    margin: 16px auto 32px;
+    row-gap: 16px;
   }
 }
 
-/* =========================
-   Sidebar (photo + links)
-   ========================= */
-
-.article-author-top {
-  /* 旧主题有 float，这里全取消 */
-  float: none;
-  width: auto;
-  margin: 0;
-  text-align: left;
-}
-
-.bio-photo {
+.avatar {
   width: 100%;
-  max-width: 230px;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
-  margin-bottom: 12px;
 }
 
-.article-author-top ul {
-  list-style: none;
-  padding: 0;
-  margin: 4px 0 0;
+.about-contact {
+  margin-top: 8px;
   font-size: 14px;
   color: var(--muted);
 }
+.about-contact a { font-size: 14px; }
 
-.article-author-top li {
+/* 标题 */
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+ul {
+  margin: 0 0 10px 1.2em;
+  padding: 0;
+}
+li {
   margin-bottom: 4px;
 }
 
-.article-author-top a {
-  color: var(--text);
-  text-decoration: none;
+/* Research projects：左时间右内容 */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.article-author-top a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   Main content area
-   ========================= */
-
-.article-wrap {
-  float: none;
-  width: auto;
-  margin: 0;
-}
-
-.article-wrap h1,
-.article-wrap h2,
-.article-wrap h3 {
-  margin-left: 0;
-}
-
-.article-wrap ul {
-  margin-left: 1.2em;
-}
-
-/* Section divider */
-
-.article-wrap hr {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-/* =========================
-   Coauthor links
-   ========================= */
-
-a.coauthor {
-  font-style: italic;
-  font-weight: 500;
-  color: #0047ab;
-  text-decoration: none;
-  border-bottom: 1px dashed #0047ab;
-  padding-bottom: 1px;
-}
-
-a.coauthor:hover {
-  color: #002d72;
-  border-bottom-style: solid;
-}
-
-/* =========================
-   Research projects layout
-   =========================
-   （如果你在 Markdown 中用 .project-row/.project-year/.project-main
-    这几个 class，就会自动变成两栏布局，可有可无）
-*/
-
-.project-row {
+.project {
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr); /* 左：时间 右：内容 */
-  column-gap: 24px;
-  row-gap: 2px;
-  margin-bottom: 16px;
+  grid-template-columns: 170px minmax(0, 1fr);
+  column-gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .project {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
 }
 
 .project-year {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--muted);
   white-space: nowrap;
 }
 
-.project-main {
-  line-height: 1.5;
+.project-body {
+  border-left: 3px solid var(--accent-soft);
+  padding-left: 14px;
 }
 
 .project-title {
-  font-weight: 600;
+  margin: 0 0 4px;
 }
 
-.project-supervisor,
-.project-link {
+.project-meta {
+  margin: 0 0 6px;
+  font-size: 0.95em;
+  color: var(--muted);
+}
+
+.project-summary {
+  margin: 0 0 6px;
+}
+
+.project-links {
+  margin: 0;
   font-size: 0.95em;
 }
 
-/* =========================
-   Footer (如果模板里有的话)
-   ========================= */
+/* 合作者/导师链接样式 */
 
-.footer-wrap {
-  max-width: var(--max-width);
-  margin: 0 auto 24px;
-  padding: 16px;
+.coauthor {
+  font-style: italic;
+  border-bottom: 1px dashed var(--accent);
+  padding-bottom: 1px;
+}
+.coauthor:hover {
+  border-bottom-style: solid;
+}
+
+/* Publications & Education */
+
+.pub-list,
+.edu-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* 页脚 */
+
+.site-footer {
   border-top: 1px solid var(--border);
-  font-size: 14px;
+  padding: 12px 16px 18px;
+  font-size: 13px;
   color: var(--muted);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
