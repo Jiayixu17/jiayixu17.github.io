@@ -75,8 +75,3 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 ### Education
 * M.S. in Statistics and Operations Research - **University of North Carolina at Chapel Hill**
 * B.M. in Information Management and Information Systems - **China University of Geosciences**
-  
----
-
-#### Miscellaneous
-**Hobbies:**
