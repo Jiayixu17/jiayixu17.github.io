@@ -12,9 +12,11 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 * **Human➜AI**: How cultural values and social norms from human society are embedded in AI and affect their behavior and applications.
 
 ---
+
 ### Education
 * M.S. in Statistics and Operations Research - **University of North Carolina at Chapel Hill**
 * B.M. in Information Management and Information Systems - **China University of Geosciences**
+  
 ---
 
 #### Miscellaneous
