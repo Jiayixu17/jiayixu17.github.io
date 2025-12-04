@@ -424,3 +424,10 @@ a.coauthor:hover {
     color: #002D72; 
     border-bottom-style: solid; 
 }
+/* Override ALL headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", Georgia, "Times New Roman", serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+    color: #111 !important;
+}
