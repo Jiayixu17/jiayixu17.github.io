@@ -469,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
 #main article,
 #index {
     float: none !important;              /* 不要再用多列 float 布局了 */
-    width: 100% !important;              /* 中间内容占 80% 宽，你可以改成 90% 等 */
+    width: 90% !important;              /* 中间内容占 80% 宽，你可以改成 90% 等 */
     margin: 0 auto 2em !important;      /* 居中 */
 }
 
