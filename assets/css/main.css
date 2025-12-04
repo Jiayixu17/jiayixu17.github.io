@@ -40,8 +40,11 @@ a:hover {
 /* 顶部导航 */
 
 .site-header {
-  background-color: #fff;
-  border-bottom: 1px solid var(--border);
+  background-color: var(--accent);            /* 用主色做深色导航 */
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+  position: sticky;                          
+  top: 0;
+  z-index: 100;
 }
 
 .nav-container {
@@ -56,7 +59,8 @@ a:hover {
 .nav-logo {
   font-weight: 700;
   letter-spacing: 0.1em;
-  font-size: 16px;
+  font-size: 17px;                 /* 原来16，稍微大一点 */
+  color: #ffffff;                  /* LOGO 白色 */
 }
 
 .nav-main {
@@ -65,17 +69,19 @@ a:hover {
 }
 
 .nav-link {
-  font-size: 15px;
+  font-size: 16px;                 /* 原来15 → 16 */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.9); /* 导航文字浅白 */
 }
 
 .nav-link-active,
 .nav-link:hover {
-  border-bottom-color: var(--accent);
+  border-bottom-color: #ffffff;    /* 底线变白 */
+  color: #ffffff;                  /* 文字变纯白 */
 }
 
 /* 页面主体 */
