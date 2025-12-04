@@ -14,17 +14,30 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 ---
 
 ### Working Projects
-| **2025 - Present** | **1**  
-Should s?  
-[Read More](#) |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **2020 - 2025** | **1s**  
-How does theg strategies?  
-[Read More](#) |
-| **2020 - 2023** | **1**  
-What ar on productivity?  
-*BS 2022*  
-[Read More](#) |
+
+<div style="display:flex; gap:20px;">
+  <div style="min-width:140px; font-weight:bold;">
+    Jan. 2025 - Present
+  </div>
+  
+  <div>
+    <strong>AI-generated Stories for Emotional Support</strong><br>
+    <a href="#">Read More</a>
+  </div>
+
+</div>
+
+<div style="display:flex; gap:20px;">
+  <div style="min-width:140px; font-weight:bold;">
+    July. 2025 - Present
+  </div>
+  
+  <div>
+    <strong>Cultual and Linguistic Influence on LLM Response</strong><br>
+    <a href="#">Read More</a>
+  </div>
+
+</div>
 
 ---
 
