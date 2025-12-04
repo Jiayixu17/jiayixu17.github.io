@@ -233,6 +233,24 @@ li {
   padding-left: 1.2em;
 }
 
+/* 强调文字 */
+.text-highlight {
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+/* 强调 badge 标签 */
+.badge-highlight {
+  display: inline-block;
+  background-color: var(--highlight);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
 /* 页脚 */
 
 .site-footer {
