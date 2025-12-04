@@ -1,2 +1,175 @@
 <!DOCTYPE html>
-<html><body>Hello, Jiayi's new site!</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jiayi Xu | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- 顶部导航：两个 tab -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-logo">JIAYI XU</div>
+      <nav class="nav-main">
+        <a href="index.html" class="nav-link nav-link-active">Home</a>
+        <a href="internships.html" class="nav-link">Internships</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主体 -->
+  <main class="page">
+
+    <!-- 自我介绍 + 头像一块 -->
+    <section id="about" class="section">
+      <div class="section-inner section-about">
+        <div class="about-photo">
+          <!-- 换成你自己的头像路径 -->
+          <img src="images/jiayi.jpg" alt="Jiayi Xu" class="avatar" />
+        </div>
+        <div class="about-text">
+          <h1>About Me</h1>
+          <p>
+            Hi! My name is <strong>Jiayi Xu 徐嘉艺</strong>. I am a second-year Master's student in
+            <strong>Statistics &amp; Operations Research</strong> at UNC-Chapel Hill.
+          </p>
+          <p>
+            My research interests focus on the <strong>bidirectional influence in human–AI collaboration</strong>:
+          </p>
+          <ul>
+            <li><strong>AI → Human</strong>: How AI shapes human emotion, cognition, and decision-making.</li>
+            <li><strong>Human → AI</strong>: How cultural values and social norms from human society are embedded in AI and affect AI behavior and applications.</li>
+          </ul>
+
+          <div class="about-contact">
+            <div>📧 <a href="mailto:your_email@unc.edu">your_email@unc.edu</a></div>
+            <div>📄 <a href="pdf/Jiayi_Xu_CV.pdf" target="_blank">Download CV</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Projects -->
+    <section id="research" class="section">
+      <div class="section-inner">
+        <h2>Research Projects</h2>
+
+        <div class="project-list">
+
+          <!-- 每个项目一块：左时间，右内容 -->
+          <article class="project">
+            <div class="project-year">
+              July 2025 – Present
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                Cultural and Linguistic Influences on LLM Responses
+              </h3>
+              <p class="project-meta">
+                Supervised by
+                <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof. Xiyang Hu</a>
+              </p>
+              <p class="project-summary">
+                <!-- 这里写项目摘要：一句话到一小段都可以 -->
+                This project examines how language and cultural context shape large language models' response styles
+                and how these upstream biases affect downstream tasks such as mental health assessment.
+              </p>
+              <p class="project-links">
+                Target venue: <em>ICIS / WITS (working paper)</em><br />
+                Working paper: <a href="#" target="_blank">link coming soon</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-year">
+              Jan. 2025 – Present
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                AI-generated Stories for Emotional Support
+              </h3>
+              <p class="project-meta">
+                Supervised by
+                <a class="coauthor" href="https://sites.google.com/view/yifan-yu/home" target="_blank">Prof. Yifan Yu</a>
+              </p>
+              <p class="project-summary">
+                This project investigates how AI-generated narratives can facilitate emotional support, self-distancing,
+                and healthier coping when users face stressful life events.
+              </p>
+              <p class="project-links">
+                Working paper: <a href="#" target="_blank">in preparation</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-year">
+              May 2021 – May 2023
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce
+              </h3>
+              <p class="project-meta">
+                Supervised by
+                <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Prof. Zhen Zhu</a>
+              </p>
+              <p class="project-summary">
+                Built a knowledge-graph–based similarity measure for tourism products and studied how product
+                homogeneity with the platform owner affects complementors’ performance.
+              </p>
+              <p class="project-links">
+                Presented at: Wuhan International E-Commerce Conference 2022<br />
+                Working paper: <a href="#" target="_blank">link</a>
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="section-inner">
+        <h2>Publications &amp; Working Papers</h2>
+
+        <ul class="pub-list">
+          <li>
+            <strong>AI-generated Stories for Emotional Support</strong> (working paper).<br />
+            Jiayi Xu, Yifan Yu. <em>Target: ICIS / CHI</em>.
+          </li>
+          <!-- 再继续往下加即可 -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="section-inner">
+        <h2>Education</h2>
+        <ul class="edu-list">
+          <li>
+            <strong>M.S. in Statistics &amp; Operations Research</strong>, University of North Carolina at Chapel Hill, USA<br />
+            Aug. 2024 – May 2026 (expected)
+          </li>
+          <li>
+            <strong>B.M. in Information Management and Information Systems</strong>, China University of Geosciences (Wuhan), China<br />
+            Sept. 2019 – July 2023
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      &copy; 2025 Jiayi Xu. Last updated: Dec 2025.
+    </div>
+  </footer>
+</body>
+</html>
