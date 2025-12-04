@@ -15,43 +15,57 @@ My research interest focus on bidirectional influence in human-AI collaboration:
 
 ### Working Projects
 
-<div style="display:flex; gap:20px;">
-  <div style="min-width:140px; font-weight:bold;">
-    July. 2025 - Present
-  </div>
-  
-  <div>
-    <strong>Cultural and Linguistic Influences on LLM Responses</strong><br>
-    Supervised by <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof.Xiyang Hu</a><br>
-    <a href="#">Read More</a>
-  </div>
+### Working Projects
 
+<div class="project-row">
+  <div class="project-year">
+    July. 2025 – Present
+  </div>
+  <div class="project-main">
+    <div class="project-title">
+      Cultural and Linguistic Influences on LLM Responses
+    </div>
+    <div class="project-supervisor">
+      Supervised by <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof. Xiyang Hu</a>
+    </div>
+    <div class="project-link">
+      <a href="#">Read More</a>
+    </div>
+  </div>
 </div>
 
-<div style="display:flex; gap:20px;">
-  <div style="min-width:140px; font-weight:bold;">
-    Jan. 2025 - Present
+<div class="project-row">
+  <div class="project-year">
+    Jan. 2025 – Present
   </div>
-  
-  <div>
-    <strong>AI-generated Stories for Emotional Support</strong><br>
-    Supervised by <a class="coauthor" href="https://sites.google.com/view/yifan-yu/home?authuser=0" target="_blank">Prof.Yifan Yu</a><br>
-    <a href="#">Read More</a>
+  <div class="project-main">
+    <div class="project-title">
+      AI-generated Stories for Emotional Support
+    </div>
+    <div class="project-supervisor">
+      Supervised by <a class="coauthor" href="https://sites.google.com/view/yifan-yu/home" target="_blank">Prof. Yifan Yu</a>
+    </div>
+    <div class="project-link">
+      <a href="#">Read More</a>
+    </div>
   </div>
-
 </div>
 
-<div style="display:flex; gap:20px;">
-  <div style="min-width:140px; font-weight:bold;">
-    May. 2021 - May. 2023
+<div class="project-row">
+  <div class="project-year">
+    May. 2021 – May. 2023
   </div>
-  
-  <div>
-    <strong>Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce</strong><br>
-    Supervised by <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Prof.Zhen Zhu</a><br>
-    <a href="#">Read More</a>
+  <div class="project-main">
+    <div class="project-title">
+      Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce
+    </div>
+    <div class="project-supervisor">
+      Supervised by <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Prof. Zhen Zhu</a>
+    </div>
+    <div class="project-link">
+      <a href="#">Read More</a>
+    </div>
   </div>
-
 </div>
 
 ---
