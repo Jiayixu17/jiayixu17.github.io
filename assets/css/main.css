@@ -1,12 +1,12 @@
 :root {
   /* 以后只要改这几个颜色变量，就能换整站配色 */
-  --bg: #f6f4fa;
+  --bg: #f1eee9;
   --bg-card: #ffffff;
   --text: #272238;
   --muted: #7a738f;
-  --accent: #203655;       /* 深紫主色 */
-  --accent-soft: #f1eee9;  /* 浅莫兰迪紫 */
-  --border: #ded7f0;
+  --accent: #293241;      
+  --accent-soft: #ee6c4d;  
+  --border: #98c1d9;
   --max-width: 1200px;
 }
 
