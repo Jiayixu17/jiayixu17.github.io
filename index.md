@@ -26,9 +26,6 @@ My research interest focus on bidirectional influence in human-AI collaboration:
     <div class="project-supervisor">
       Supervised by <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof. Xiyang Hu</a>
     </div>
-    <div class="project-link">
-      <a href="#">Read More</a>
-    </div>
   </div>
 </div>
 
@@ -45,9 +42,6 @@ My research interest focus on bidirectional influence in human-AI collaboration:
     <div class="project-supervisor">
       Supervised by <a class="coauthor" href="https://sites.google.com/view/yifan-yu/home" target="_blank">Prof. Yifan Yu</a>
     </div>
-    <div class="project-link">
-      <a href="#">Read More</a>
-    </div>
   </div>
 </div>
 
@@ -63,9 +57,6 @@ My research interest focus on bidirectional influence in human-AI collaboration:
     </div>
     <div class="project-supervisor">
       Supervised by <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Prof. Zhen Zhu</a>
-    </div>
-    <div class="project-link">
-      <a href="#">Read More</a>
     </div>
   </div>
 </div>
