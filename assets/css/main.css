@@ -492,3 +492,55 @@ h1 { font-size: 42px !important; margin-bottom: 20px; }
 h2 { font-size: 32px !important; margin-top: 32px; margin-bottom: 12px; }
 h3 { font-size: 24px !important; margin-top: 24px; margin-bottom: 10px; }
 
+/* 顶部导航整体宽度与正文一致 */
+.navigation-wrapper {
+    max-width: 1500px;
+    margin: 0 auto 2em;
+    width: 100%;
+}
+
+/* 导航文字大一点、更清晰 */
+.top-navigation li a {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+/* 桌面端：左边头像 + 右边正文，两栏布局 */
+@media (min-width: 900px) {
+  #main article {
+    max-width: 1100px;
+    margin: 0 auto 3em;
+    float: none !important;
+    width: 100% !important;
+
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr); /* 左260px 右自适应 */
+    column-gap: 40px;
+    align-items: flex-start;
+  }
+
+  /* 左栏头像块 */
+  .article-author-top {
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    text-align: left;
+  }
+
+  /* 右栏正文块 */
+  .article-wrap {
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+}
+
+/* 手机 / 小屏幕：恢复单列纵向排列 */
+@media (max-width: 899px) {
+  #main article {
+    max-width: 100%;
+    margin: 0 auto 2em;
+    float: none !important;
+    width: 100% !important;
+  }
+}
