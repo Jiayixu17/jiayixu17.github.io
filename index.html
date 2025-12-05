@@ -6,62 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<script>
-  (function () {
-    const root = document.documentElement;
-    const header = document.querySelector('.site-header');
-    const toggleBtn = document.querySelector('.theme-toggle');
-
-    // 如果没找到按钮，直接退出，防止报错
-    if (!toggleBtn) return;
-
-    // 判定是否默认用深色
-    function shouldUseDark() {
-      const prefersDark = window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const hour = new Date().getHours();
-      const isNight = (hour >= 19 || hour < 6);
-      return prefersDark || isNight;
-    }
-
-    // 设置主题 + 按钮图标
-    function applyTheme(theme) {
-      const t = theme === 'dark' ? 'dark' : 'light';
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-      toggleBtn.textContent = t === 'dark' ? '☀️' : '🌙';
-    }
-
-    // 初始化：如果有用户选择，就用用户的；否则用系统/时间
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    } else {
-      applyTheme(shouldUseDark() ? 'dark' : 'light');
-    }
-
-    // 点击按钮时切换
-    toggleBtn.addEventListener('click', function () {
-      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-    });
-
-    // 滚动阴影
-    function onScroll() {
-      if (!header) return;
-      if (window.scrollY > 4) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  })();
-</script>
-</body>
-</html>
 <body>
   <!-- 顶部导航：两个 tab -->
   <header class="site-header">
@@ -71,9 +15,8 @@
         <a href="index.html" class="nav-link nav-link-active">Home</a>
         <a href="internships.html" class="nav-link">Internships</a>
       </nav>
-      <button class="theme-toggle" aria-label="Toggle theme">
-      🌙
-      </button>
+      <!-- 主题切换按钮 -->
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
   </header>
 
@@ -84,15 +27,13 @@
     <section id="about" class="section">
       <div class="section-inner section-about">
         <div class="about-photo">
-          <!-- 头像路径 -->
           <img src="images/jyx.jpg" alt="Jiayi Xu" class="avatar" />
-          <!-- 联系方式contact info -->
           <div class="about-contact">
             <div>📧 <a href="mailto:xujayi@unc.edu">xujayi@unc.edu</a></div>
             <div>📄 <a href="pdf/Jiayi_Xu_CV.pdf" target="_blank">Download CV</a></div>
           </div>
         </div>
-        
+
         <div class="about-text">
           <h1>About Me</h1>
           <p>
@@ -109,144 +50,60 @@
         </div>
       </div>
     </section>
-    
-<!-- 项目信息Section -->
+
     <!-- Research Projects -->
     <section id="research" class="section">
       <div class="section-inner">
         <h2>Research Projects</h2>
 
         <div class="project-list">
-
-<!-- Project 1 -->
+          <!-- Project 1 -->
           <article class="project">
             <div class="project-year">
               July 2025 – Present
             </div>
-           <div class="project-body">
-  <h3 class="project-title">
-    Cultural and Linguistic Influences on LLM Responses
-  </h3>
+            <div class="project-body">
+              <h3 class="project-title">
+                Cultural and Linguistic Influences on LLM Responses
+              </h3>
 
-  <p class="project-meta">
-    Supervised by
-    <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof. Xiyang Hu</a>
-  </p>
+              <p class="project-meta">
+                Supervised by
+                <a class="coauthor" href="https://xiyanghu.github.io/" target="_blank">Prof. Xiyang Hu</a>
+              </p>
 
-  <!-- 折叠的项目简介 -->
- <details class="project-details">
-  <summary>Short description</summary>
-  <div class="project-details-body">
-    <p><strong>Goal.</strong> Examine how language and cultural context shape LLM response styles and
-      how these upstream biases affect downstream mental health–related tasks.</p>
-    <p><strong>Methods.</strong> Large-scale prompt-based experiments across bilingual settings,
-      combined with quantitative analysis of response patterns.</p>
-    <ul>
-      <li>Compare response styles across languages and cultural framings;</li>
-      <li>Link upstream stylistic differences to downstream prediction bias.</li>
-    </ul>
-  </div>
-</details>
+              <details class="project-details">
+                <summary>Short description</summary>
+                <div class="project-details-body">
+                  <p><strong>Goal.</strong> Examine how language and cultural context shape LLM response styles and
+                    how these upstream biases affect downstream mental health–related tasks.</p>
+                  <p><strong>Methods.</strong> Large-scale prompt-based experiments across bilingual settings,
+                    combined with quantitative analysis of response patterns.</p>
+                  <ul>
+                    <li>Compare response styles across languages and cultural framings;</li>
+                    <li>Link upstream stylistic differences to downstream prediction bias.</li>
+                  </ul>
+                </div>
+              </details>
 
-  <!-- 发表信息 / working paper 信息 -->
-  <div class="project-extra">
-    <div class="project-extra-line">
-      Target venue:
-      <span class="project-venue">ICIS / WITS (working paper)</span>
-    </div>
-    <div class="project-extra-line">
-      Working paper:
-      <a class="project-link" href="#" target="_blank">link coming soon</a>
-    </div>
-  </div>
-</div>
-</article>
-
-<!-- Project 2 -->
-          <article class="project">
-            <div class="project-year">
-              Jan. 2025 – Present
+              <div class="project-extra">
+                <div class="project-extra-line">
+                  Target venue:
+                  <span class="project-venue">ICIS / WITS (working paper)</span>
+                </div>
+                <div class="project-extra-line">
+                  Working paper:
+                  <a class="project-link" href="#" target="_blank">link coming soon</a>
+                </div>
+              </div>
             </div>
-           <div class="project-body">
-  <h3 class="project-title">
-    AI-generated Stories for Emotional Support
-  </h3>
+          </article>
 
-  <p class="project-meta">
-    Supervised by <a class="coauthor" href="https://sites.google.com/view/yifan-yu/home" target="_blank">Prof. Yifan Yu</a>
-  </p>
+          <!-- Project 2 -->
+          <!-- （这里你保持原来的结构就行，我不全部重贴了） -->
 
-  <!-- 折叠的项目简介 -->
- <details class="project-details">
-  <summary>Short description</summary>
-  <div class="project-details-body">
-    <p><strong>Goal.</strong> Examine how language and cultural context shape LLM response styles and
-      how these upstream biases affect downstream mental health–related tasks.</p>
-    <p><strong>Methods.</strong> Large-scale prompt-based experiments across bilingual settings,
-      combined with quantitative analysis of response patterns.</p>
-    <ul>
-      <li>Compare response styles across languages and cultural framings;</li>
-      <li>Link upstream stylistic differences to downstream prediction bias.</li>
-    </ul>
-  </div>
-</details>
-
-  <!-- 发表信息 / working paper 信息 -->
-  <div class="project-extra">
-    <div class="project-extra-line">
-      Target venue:
-      <span class="project-venue">ICIS / WITS (working paper)</span>
-    </div>
-    <div class="project-extra-line">
-      Working paper:
-      <a class="project-link" href="#" target="_blank">link coming soon</a>
-    </div>
-  </div>
-</div>
-</article>
-
-<!-- Project 3 -->
-          <article class="project">
-            <div class="project-year">
-              2021 – 2023
-            </div>
-           <div class="project-body">
-  <h3 class="project-title">
-    Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce
-  </h3>
-
-  <p class="project-meta">
-    Supervised by <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Prof. Zhen Zhu</a>
-  </p>
-
-  <!-- 折叠的项目简介 -->
- <details class="project-details">
-  <summary>Short description</summary>
-  <div class="project-details-body">
-    <p><strong>Goal.</strong> Examine how language and cultural context shape LLM response styles and
-      how these upstream biases affect downstream mental health–related tasks.</p>
-    <p><strong>Methods.</strong> Large-scale prompt-based experiments across bilingual settings,
-      combined with quantitative analysis of response patterns.</p>
-    <ul>
-      <li>Compare response styles across languages and cultural framings;</li>
-      <li>Link upstream stylistic differences to downstream prediction bias.</li>
-    </ul>
-  </div>
-</details>
-
-  <!-- 发表信息 / working paper 信息 -->
-  <div class="project-extra">
-    <div class="project-extra-line">
-      Target venue:
-      <span class="project-venue">ICIS / WITS (working paper)</span>
-    </div>
-    <div class="project-extra-line">
-      Working paper:
-      <a class="project-link" href="#" target="_blank">link coming soon</a>
-    </div>
-  </div>
-</div>
-</article>
+          <!-- Project 3 -->
+          <!-- 同上 -->
         </div>
       </div>
     </section>
@@ -265,7 +122,6 @@
         </ul>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -273,5 +129,55 @@
       &copy; 2025 Jiayi Xu. Last updated: Dec 2025.
     </div>
   </footer>
+
+  <!-- 把脚本放在最后，保证能找到 .theme-toggle -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const header = document.querySelector('.site-header');
+      const toggleBtn = document.querySelector('.theme-toggle');
+
+      if (!toggleBtn) return;
+
+      function shouldUseDark() {
+        const prefersDark = window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const hour = new Date().getHours();
+        const isNight = (hour >= 19 || hour < 6);
+        return prefersDark || isNight;
+      }
+
+      function applyTheme(theme) {
+        const t = theme === 'dark' ? 'dark' : 'light';
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+        toggleBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+      }
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        applyTheme(shouldUseDark() ? 'dark' : 'light');
+      }
+
+      toggleBtn.addEventListener('click', function () {
+        const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+
+      function onScroll() {
+        if (!header) return;
+        if (window.scrollY > 4) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
