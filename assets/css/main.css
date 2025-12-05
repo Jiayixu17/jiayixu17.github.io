@@ -362,3 +362,36 @@ li { margin-bottom: 6px; }
 :root[data-theme="dark"] .theme-toggle {
   color: #fff;
 }
+
+/* 🌙✨ 主题切换平滑动画 */
+html, body {
+  transition: 
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* 卡片、分区背景同步动画 */
+.section-inner,
+.project-body,
+.site-header,
+.site-footer {
+  transition: 
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* 链接、导师名字等细节 */
+a, .coauthor, .project-venue, .project-extra {
+  transition: 
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.theme-toggle {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:active {
+  transform: rotate(180deg);
+}
