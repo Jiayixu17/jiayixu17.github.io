@@ -1,13 +1,26 @@
 :root {
-  --bg: #F5F3F0;
+  /* 日间主题（默认） */
+  --bg: #f1eee9;
   --bg-card: #ffffff;
   --text: #272238;
   --muted: #3d5a80;
   --accent: #293241;
   --accent-soft: #ee6c4d;
-  --border: #F5F3F0;
+  --border: #98c1d9;
   --highlight: #ee6c4d;
   --max-width: 1200px;
+}
+
+/* 夜间主题（自动切换时会在 <html> 上加 data-theme="dark"） */
+:root[data-theme="dark"] {
+  --bg: #0b1020;
+  --bg-card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #1f2937;        /* 深灰蓝导航 & 主色 */
+  --accent-soft: #f97316;   /* 暖橙强调线 */
+  --border: #374151;
+  --highlight: #fb923c;     /* 高亮橙色 */
 }
 
 /* RESET */
@@ -20,6 +33,10 @@
 html, body {
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;   /* 点击导航平滑滚动 */
 }
 
 body {
@@ -43,6 +60,12 @@ a:hover { text-decoration: underline; }
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: box-shadow .25s ease, background-color .2s ease;
+}
+
+/* 滚动后加阴影（scroll JS 会加上 .scrolled） */
+.site-header.scrolled {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
 }
 
 .nav-container {
@@ -119,6 +142,12 @@ a:hover { text-decoration: underline; }
   object-fit: cover;
 }
 
+.about-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .about-contact {
   margin-top: 12px;
   font-size: 15px;
@@ -175,6 +204,7 @@ li { margin-bottom: 6px; }
 .project-meta {
   font-weight: 600;
   margin-bottom: 6px;
+  color: var(--muted);
 }
 
 /* ▼ 展开 summary 标题（箭头、对齐、加粗） */
@@ -188,6 +218,12 @@ li { margin-bottom: 6px; }
   margin: 8px 0;
   gap: 6px;
 }
+
+/* 去掉浏览器默认的小三角 */
+.project-details > summary::-webkit-details-marker {
+  display: none;
+}
+
 .project-details > summary::before {
   content: "▸";
   font-size: 1.2em;
@@ -219,21 +255,81 @@ li { margin-bottom: 6px; }
 
 /* 内部排版优化 */
 .project-details-body p { margin: 6px 0; }
+.project-details-body ul {
+  margin: 4px 0 0 1.1em;
+  padding-left: 0;
+}
+.project-details-body li { margin-bottom: 2px; }
 .project-details-body strong {
   display: inline-block;
   color: var(--accent);
   margin-bottom: 2px;
 }
 
-/* Links & Highlight */
-.project-links {
-  font-weight: 600;
+/* 发表信息块 */
+.project-extra {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: rgba(238, 108, 77, 0.16); /* 用 accent-soft 的透明版 */
+  font-size: 0.95em;
+  color: var(--muted);
+}
+:root[data-theme="dark"] .project-extra {
+  background-color: rgba(249, 115, 22, 0.18); /* 暗色下稍暖一点 */
+}
+
+.project-extra-line + .project-extra-line {
+  margin-top: 2px;
+}
+
+.project-venue {
+  font-style: italic;
   color: var(--accent);
+}
+
+/* 链接样式 */
+.project-link {
+  color: var(--accent);
+  font-weight: 500;
   text-decoration: underline;
 }
+.project-link:hover {
+  text-decoration: none;
+}
+
+/* 合作者/导师链接 */
+.coauthor {
+  font-style: italic;
+  border-bottom: 1px dashed var(--accent);
+  padding-bottom: 1px;
+}
+.coauthor:hover {
+  border-bottom-style: solid;
+}
+
+/* Publications & Education */
+.pub-list,
+.edu-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* 强调文字 / badge */
 .text-highlight {
   color: var(--highlight);
   font-weight: 700;
+}
+
+.badge-highlight {
+  display: inline-block;
+  background-color: var(--highlight);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
 }
 
 /* ───────── FOOTER ───────── */
