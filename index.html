@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-  <!-- 顶部导航：两个 tab -->
+  <!-- 顶部导航：单页锚点跳转 -->
   <header class="site-header">
     <div class="nav-container">
       <div class="nav-logo">JIAYI XU</div>
@@ -15,7 +15,7 @@
         <a href="#about" class="nav-link nav-link-active">About</a>
         <a href="#research" class="nav-link">Research</a>
         <a href="#education" class="nav-link">Education</a>
-        <a href="#Professional Experience" class="nav-link">Internships</a>
+        <a href="#experience" class="nav-link">Professional Experience</a>
       </nav>
       <!-- 主题切换按钮 -->
       <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
@@ -25,7 +25,7 @@
   <!-- 页面主体 -->
   <main class="page">
 
-    <!-- 自我介绍 + 头像 -->
+    <!-- About -->
     <section id="about" class="section">
       <div class="section-inner section-about">
         <div class="about-photo">
@@ -44,14 +44,18 @@
           </p>
           <p>
             My research interests lie in <strong>human-AI collaboration, AI and human behavior, generative AI, and large language models (LLMs).</strong>
-            As the saying goes, <a href="https://medium.com/@freddavis/we-shape-our-tools-and-thereafter-our-tools-shape-us-1a564cb87484"><em>"we shape our tools, and then our tools shape us,"</em></a> my interest focus on the bidirectional influence and co-evolution with human-AI interactions.
+            As the saying goes,
+            <a href="https://medium.com/@freddavis/we-shape-our-tools-and-thereafter-our-tools-shape-us-1a564cb87484" target="_blank">
+              <em>"We shape our tools, and then our tools shape us."</em>
+            </a>
+            I focus on the bidirectional influence and co-evolution within human–AI interactions.
           </p>
-           <p>
+          <p>
             Specifically, I am passionate about exploring the following topics:
           </p>
           <ul>
-            <li><strong>AI → Human</strong>: How AI influence human emotion, cognition, and decision-making.</li>
-            <li><strong>Human → AI</strong>: How social constructs (e.g. culture and social norms) become embedded in AI systems and shape their behavior and applications.</li>
+            <li><strong>AI → Human</strong>: How AI influences human emotion, cognition, and decision-making.</li>
+            <li><strong>Human → AI</strong>: How social constructs (e.g., culture and social norms) become embedded in AI systems and shape their behavior and applications.</li>
           </ul>
         </div>
       </div>
@@ -79,7 +83,10 @@
               </p>
 
               <details class="project-details">
-                <summary>Short description</summary>
+                <summary>
+                  <span class="summary-left">Short description</span>
+                  <span class="summary-arrow" aria-hidden="true">▸</span>
+                </summary>
                 <div class="project-details-body">
                   <p><strong>Goal.</strong> Examine how language and cultural context shape LLM response styles and
                     how these upstream biases affect downstream mental health–related tasks.</p>
@@ -91,12 +98,13 @@
                   </ul>
                 </div>
               </details>
-              </div>
+
+              <!-- 如果未来有 target venue / working paper，可以在这里加 project-presentation 或 project-extra -->
             </div>
           </article>
 
           <!-- Project 2 -->
-           <article class="project">
+          <article class="project">
             <div class="project-year">
               Jan. 2025 – Present
             </div>
@@ -111,33 +119,57 @@
                 <a class="coauthor" href="https://sites.google.com/view/wendaoxue/home?authuser=0" target="_blank">Wendao Xue</a>
               </p>
 
+              <!-- 上一行：Short description + 箭头 -->
               <details class="project-details">
-              <summary>
-                <span class="summary-left">Short description</span>
-                <span class="project-badge">Presented at <em>INFORMS Annual Meeting 2025</em></span>
-                <span class="summary-arrow" aria-hidden="true">▸</span>
-             </summary>
-
+                <summary>
+                  <span class="summary-left">Short description</span>
+                  <span class="summary-arrow" aria-hidden="true">▸</span>
+                </summary>
                 <div class="project-details-body">
                   <p>Stories are central to how people understand the world and themselves. In mental health, stories are known to support healing. Immersion in resonant stories encourages emotional processing, perspective-taking, and self-reflection, while reducing psychological resistance to new insights.</p>
                   <p>However, stories created by humans are limited and people may not always have access to high-quality and personally relevant stories. The rise of generative AI (GenAI) enables tailored, empathetic stories that feel personally meaningful.</p>
                   <p>This study examines a conversational healing mode in which people interact with a chatbot powered by personalized GenAI-generated stories. We investigate whether this story-based mode is effective and through which behavioral mechanisms it benefits users.</p>
                 </div>
-</details>
+              </details>
 
-                  <!-- 发表 / 报告信息 -->
-                  <div class="project-extra">
-                  <div class="project-extra-line">
-                  <span class="project-venue">Presented at INFORMS Annual Meeting 2025</span>
-                  </div>
-                  </div>
-              
+              <!-- 下一行：Presentation 信息单独展示 -->
+              <div class="project-presentation">
+                Presented at <em>INFORMS Annual Meeting 2025</em>
               </div>
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <!-- 同上 -->
+          <!-- Project 3：以后按同样结构补充 -->
+          <!--
+          <article class="project">
+            <div class="project-year">
+              2021 – 2023
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                Graph-Based Modeling of Product Homogeneity for Performance Prediction in E-Commerce
+              </h3>
+              <p class="project-meta">
+                Supervised by
+                <a class="coauthor" href="https://jgxy.cug.edu.cn/info/1157/11534.htm" target="_blank">Zhen Zhu</a>
+              </p>
+
+              <details class="project-details">
+                <summary>
+                  <span class="summary-left">Short description</span>
+                  <span class="summary-arrow" aria-hidden="true">▸</span>
+                </summary>
+                <div class="project-details-body">
+                  <!-- 摘要内容 -->
+                </div>
+              </details>
+
+              <div class="project-presentation">
+                Presented at <em>Wuhan International E-Commerce Conference 2022</em>
+              </div>
+            </div>
+          </article>
+          -->
         </div>
       </div>
     </section>
@@ -158,7 +190,7 @@
     </section>
 
     <!-- Professional Experience -->
-    <section id="professional experience" class="section">
+    <section id="experience" class="section">
       <div class="section-inner">
         <h2>Professional Experience</h2>
         <ul class="edu-list">
@@ -168,20 +200,16 @@
           <li>
             <strong>Assistant Data Engineer Intern</strong>, PwC, 2022
           </li>
-              <li>
+          <li>
             <strong>Research Intern</strong>, Tongji University, 2022
           </li>
-           <li>
-            <strong>Strategy Consulting Intern</strong>, DF&P Strategy Consultants, 2021
+          <li>
+            <strong>Strategy Consulting Intern</strong>, DF&amp;P Strategy Consultants, 2021
           </li>
         </ul>
       </div>
     </section>
 
-
-
-
-    
   </main>
 
   <footer class="site-footer">
@@ -190,89 +218,84 @@
     </div>
   </footer>
 
-  <!-- 把脚本放在最后，保证能找到 .theme-toggle -->
-<script>
-  (function () {
-    const root = document.documentElement;
-    const header = document.querySelector('.site-header');
-    const toggleBtn = document.querySelector('.theme-toggle');
-    const navLinks = document.querySelectorAll('.nav-link');
+  <!-- 脚本放在最后，保证能找到元素 -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const header = document.querySelector('.site-header');
+      const toggleBtn = document.querySelector('.theme-toggle');
+      const navLinks = document.querySelectorAll('.nav-link');
 
-    /* ========== 1. 导航高亮：根据 hash 来决定谁高亮 ========== */
+      /* ========== 1. 导航高亮：根据 hash 来决定谁高亮 ========== */
+      function setActiveLinkByHash() {
+        const hash = window.location.hash || '#about';  // 默认 #about
+        navLinks.forEach(link => {
+          const target = link.getAttribute('href');
+          if (target === hash) {
+            link.classList.add('nav-link-active');
+          } else {
+            link.classList.remove('nav-link-active');
+          }
+        });
+      }
 
-    function setActiveLinkByHash() {
-      const hash = window.location.hash || '#about';  // 默认 #about
+      // 点击导航时，更新高亮
       navLinks.forEach(link => {
-        const target = link.getAttribute('href');
-        if (target === hash) {
-          link.classList.add('nav-link-active');
-        } else {
-          link.classList.remove('nav-link-active');
+        link.addEventListener('click', function () {
+          setTimeout(setActiveLinkByHash, 0);
+        });
+      });
+
+      // hash 变化时更新
+      window.addEventListener('hashchange', setActiveLinkByHash);
+
+      // 首次加载时初始化
+      setActiveLinkByHash();
+
+
+      /* ========== 2. 夜间模式切换 ========== */
+      if (toggleBtn) {
+        function shouldUseDark() {
+          const prefersDark = window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const hour = new Date().getHours();
+          const isNight = (hour >= 19 || hour < 6);
+          return prefersDark || isNight;
         }
-      });
-    }
 
-    // 点击导航时，更新高亮（同时保留默认的锚点跳转）
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        // 等浏览器把 hash 更新完，再根据 hash 设置高亮
-        setTimeout(setActiveLinkByHash, 0);
-      });
-    });
+        function applyTheme(theme) {
+          const t = theme === 'dark' ? 'dark' : 'light';
+          root.setAttribute('data-theme', t);
+          localStorage.setItem('theme', t);
+          toggleBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+        }
 
-    // 手动改 hash / 其他方式跳转时也更新
-    window.addEventListener('hashchange', setActiveLinkByHash);
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          applyTheme(savedTheme);
+        } else {
+          applyTheme(shouldUseDark() ? 'dark' : 'light');
+        }
 
-    // 页面第一次加载时根据当前 hash 初始化一次
-    setActiveLinkByHash();
-
-
-    /* ========== 2. 夜间模式切换 ========== */
-
-    if (toggleBtn) {
-      function shouldUseDark() {
-        const prefersDark = window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const hour = new Date().getHours();
-        const isNight = (hour >= 19 || hour < 6);
-        return prefersDark || isNight;
+        toggleBtn.addEventListener('click', function () {
+          const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+        });
       }
 
-      function applyTheme(theme) {
-        const t = theme === 'dark' ? 'dark' : 'light';
-        root.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-        toggleBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+      /* ========== 3. 滚动阴影 ========== */
+      function onScroll() {
+        if (!header) return;
+        if (window.scrollY > 4) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
       }
-
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        applyTheme(savedTheme);
-      } else {
-        applyTheme(shouldUseDark() ? 'dark' : 'light');
-      }
-
-      toggleBtn.addEventListener('click', function () {
-        const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        const next = current === 'dark' ? 'light' : 'dark';
-        applyTheme(next);
-      });
-    }
-
-
-    /* ========== 3. 滚动阴影 ========== */
-
-    function onScroll() {
-      if (!header) return;
-      if (window.scrollY > 4) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  })();
-</script>
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
