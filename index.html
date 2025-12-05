@@ -7,52 +7,58 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <script>
-(function () {
-  const root = document.documentElement;
-  const themeToggle = document.querySelector('.theme-toggle');
+  (function () {
+    const root = document.documentElement;
+    const header = document.querySelector('.site-header');
+    const toggleBtn = document.querySelector('.theme-toggle');
 
-  // 根据系统或时间判断需要自动夜间
-  function shouldUseDark() {
-    const prefersDark = window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const hour = new Date().getHours();
-    const isNight = (hour >= 19 || hour < 6);
-    return prefersDark || isNight;
-  }
+    // 如果没找到按钮，直接退出，防止报错
+    if (!toggleBtn) return;
 
-  // 读取用户偏好
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    root.setAttribute('data-theme', savedTheme);
-  } else if (shouldUseDark()) {
-    root.setAttribute('data-theme', 'dark');
-  }
+    // 判定是否默认用深色
+    function shouldUseDark() {
+      const prefersDark = window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const hour = new Date().getHours();
+      const isNight = (hour >= 19 || hour < 6);
+      return prefersDark || isNight;
+    }
 
-  // 点击按钮切换模式
-  function toggleTheme() {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    const newTheme = isDark ? 'light' : 'dark';
-    root.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    // 设置主题 + 按钮图标
+    function applyTheme(theme) {
+      const t = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      toggleBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+    }
 
-    // 更新按钮图标
-    themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-  }
-  themeToggle.addEventListener('click', toggleTheme);
+    // 初始化：如果有用户选择，就用用户的；否则用系统/时间
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else {
+      applyTheme(shouldUseDark() ? 'dark' : 'light');
+    }
 
-  // 初始设置按钮图标
-  themeToggle.textContent =
-    root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    // 点击按钮时切换
+    toggleBtn.addEventListener('click', function () {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
 
-  // 滚动阴影
-  const header = document.querySelector('.site-header');
-  function onScroll() {
-    if (window.scrollY > 4) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll);
-  onScroll();
-})();
+    // 滚动阴影
+    function onScroll() {
+      if (!header) return;
+      if (window.scrollY > 4) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  })();
 </script>
 </body>
 </html>
