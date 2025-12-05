@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* 日间主题（默认） */
   --bg: #ffffff;
