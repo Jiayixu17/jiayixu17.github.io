@@ -226,28 +226,37 @@ li {
   margin: 4px 0 6px;
 }
 
+/* 折叠标题：箭头 + 文本在同一行对齐 */
+
 .project-details > summary {
   cursor: pointer;
-  list-style: none;
+  list-style: none;          /* 去掉默认列表样式 */
   font-size: 1em;
   font-weight: 600;
   color: var(--muted);
 
-  /* 关键：用 inline-flex 让箭头和文字垂直居中对齐 */
+  /* 关键：让箭头和文字垂直居中对齐 */
   display: inline-flex;
   align-items: center;
-  gap: 4px;              /* 箭头和文字之间留一点距离 */
+  gap: 6px;
+}
+
+.project-details > summary::-webkit-details-marker {
+  display: none;
 }
 
 .project-details > summary::before {
   content: "▸";
-  font-size: 1.5em;
-  color: inherit;         /* 继承文字颜色，保持一致 */
+  font-size: 1.1em;
+  color: inherit;             /* 继承文字颜色，保持一致 */
+  transform-origin: center;
+  transition: transform 0.2s ease;
 }
 
-/* 展开时换成向下箭头 */
+/* 展开时箭头朝下（也可以用旋转） */
 .project-details[open] > summary::before {
   content: "▾";
+  transform: rotate(90deg);
 }
 
 .project-details[open] > summary::before {
