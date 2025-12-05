@@ -238,7 +238,7 @@ li { margin-bottom: 6px; }
 
 .project-meta {
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   color: var(--muted);
 }
 
@@ -250,7 +250,7 @@ li { margin-bottom: 6px; }
   align-items: center;
   font-weight: 600;
   color: var(--muted);
-  margin: 8px 0;
+  margin: 5px 0;
   gap: 6px;
 }
 
