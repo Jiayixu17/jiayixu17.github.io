@@ -203,6 +203,7 @@ li {
   margin: 0 0 6px;
   font-size: 0.95em;
   color: var(--muted);
+  font-weight: 600;              /* 整行稍微加粗 */
 }
 
 /* 如果以后不再用 <p class="project-summary">，这一块可以不用 */
@@ -220,11 +221,12 @@ li {
 
 .project-details > summary {
   cursor: pointer;
-  list-style: none;              /* 去掉默认的小三角样式（部分浏览器） */
-  font-size: 0.95em;
+  list-style: none;
+  font-size: 1em;
+  font-weight: 600;              /* 加粗 */
   color: var(--muted);
   position: relative;
-  padding-left: 16px;
+  padding-left: 20px;
 }
 
 .project-details > summary::before {
@@ -232,7 +234,7 @@ li {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 0.9em;
+  font-size: 1.1em;              /* 箭头大一点 */
   color: var(--accent);
 }
 
@@ -244,13 +246,47 @@ li {
   margin: 6px 0 0;
 }
 
+.project-details-body {
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+.project-details-body p {
+  margin: 4px 0;
+}
+
+.project-details-body ul {
+  margin: 4px 0 0 1.1em;
+  padding-left: 0;
+}
+
+.project-details-body li {
+  margin-bottom: 2px;
+}
+
+.project-details-body strong {
+  color: var(--accent);     /* 小标题用主色 */
+}
+
+/* 展开/收起的动画效果 */
+.project-details-body {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+}
+
+.project-details[open] .project-details-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* 发表信息 / working paper 信息区域 */
 
 .project-extra {
   margin-top: 6px;
   padding: 6px 10px;
   border-radius: 6px;
-  background-color: var(--accent-soft);
+  background-color: rgba(238, 108, 77, 0.18);
   font-size: 0.95em;
   color: var(--muted);
 }
