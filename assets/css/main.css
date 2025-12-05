@@ -234,7 +234,7 @@ li {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 1.1em;              /* 箭头大一点 */
+  font-size: 2.0em;              /* 箭头 */
   color: var(--accent);
 }
 
