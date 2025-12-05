@@ -7,35 +7,52 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <script>
-  (function () {
-    const root = document.documentElement;
+(function () {
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('.theme-toggle');
 
-    // 1. 判断是否应该用深色：系统偏好 or 时间在晚上
+  // 根据系统或时间判断需要自动夜间
+  function shouldUseDark() {
     const prefersDark = window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     const hour = new Date().getHours();
-    const isNightTime = (hour >= 19 || hour < 6);
+    const isNight = (hour >= 19 || hour < 6);
+    return prefersDark || isNight;
+  }
 
-    if (prefersDark || isNightTime) {
-      root.setAttribute('data-theme', 'dark');
-    }
+  // 读取用户偏好
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    root.setAttribute('data-theme', savedTheme);
+  } else if (shouldUseDark()) {
+    root.setAttribute('data-theme', 'dark');
+  }
 
-    // 2. 滚动时给导航栏加阴影
-    const header = document.querySelector('.site-header');
-    if (!header) return;
+  // 点击按钮切换模式
+  function toggleTheme() {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
 
-    function onScroll() {
-      if (window.scrollY > 4) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
+    // 更新按钮图标
+    themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  }
+  themeToggle.addEventListener('click', toggleTheme);
 
-    window.addEventListener('scroll', onScroll);
-    onScroll(); // 初始执行一次
-  })();
+  // 初始设置按钮图标
+  themeToggle.textContent =
+    root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+
+  // 滚动阴影
+  const header = document.querySelector('.site-header');
+  function onScroll() {
+    if (window.scrollY > 4) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+})();
 </script>
 </body>
 </html>
