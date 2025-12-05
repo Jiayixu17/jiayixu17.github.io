@@ -93,19 +93,50 @@ a:hover { text-decoration: underline; }
   gap: 26px;
 }
 
+/* 导航栏基础样式 */
 .nav-link {
+  position: relative;
   font-size: 16px;
   font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  color: rgba(255, 255, 255, .9);
-  transition: all .16s ease;
+  padding: 6px 0;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
-.nav-link-active,
-.nav-link:hover {
-  color: #fff;
-  border-bottom-color: #fff;
+
+/* 动画底线 */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--highlight);
+  transition: width 0.25s ease;
+}
+
+/* hover 或 active 时滑动底线显示 + 文字高亮色 */
+.nav-link:hover,
+.nav-link-active {
+  color: var(--highlight);
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+  width: 100%;
+}
+
+/* 夜间模式更柔和（可根据你审美再调） */
+:root[data-theme="dark"] .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+:root[data-theme="dark"] .nav-link:hover,
+:root[data-theme="dark"] .nav-link-active {
+  color: var(--highlight);
 }
 
 /* ───────── PAGE ───────── */
