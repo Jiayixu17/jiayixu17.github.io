@@ -6,7 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
+<script>
+  (function () {
+    const root = document.documentElement;
 
+    // 1. 判断是否应该用深色：系统偏好 or 时间在晚上
+    const prefersDark = window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const hour = new Date().getHours();
+    const isNightTime = (hour >= 19 || hour < 6);
+
+    if (prefersDark || isNightTime) {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    // 2. 滚动时给导航栏加阴影
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    function onScroll() {
+      if (window.scrollY > 4) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', onScroll);
+    onScroll(); // 初始执行一次
+  })();
+</script>
+</body>
+</html>
 <body>
   <!-- 顶部导航：两个 tab -->
   <header class="site-header">
