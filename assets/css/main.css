@@ -128,6 +128,13 @@ a:hover {
   object-fit: cover;
 }
 
+.about-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* 如果想居中可以改成 center */
+  gap: 8px;                /* 照片与邮箱之间留一点间距 */
+}
+
 .about-contact {
   margin-top: 8px;
   font-size: 14px;
