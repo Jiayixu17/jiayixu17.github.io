@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ───────── 主题变量 ───────── */
 :root {
   /* 日间主题（默认） */
   --bg: #ffffff;
@@ -15,19 +16,19 @@ html {
   --max-width: 1200px;
 }
 
-/* 夜间主题（自动切换时会在 <html> 上加 data-theme="dark"） */
+/* 夜间主题（data-theme="dark" 时覆盖） */
 :root[data-theme="dark"] {
   --bg: #0b1020;
   --bg-card: #111827;
   --text: #e5e7eb;
   --muted: #9ca3af;
-  --accent: #1f2937;        /* 深灰蓝导航 & 主色 */
-  --accent-soft: #f97316;   /* 暖橙强调线 */
+  --accent: #1f2937;       /* 深灰蓝导航&主色 */
+  --accent-soft: #f97316;  /* 暖橙强调线 */
   --border: #374151;
-  --highlight: #fb923c;     /* 高亮橙色 */
+  --highlight: #fb923c;    /* 高亮橙色 */
 }
 
-/* RESET */
+/* ───────── RESET ───────── */
 *,
 *::before,
 *::after {
@@ -37,10 +38,6 @@ html {
 html, body {
   margin: 0;
   padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;   /* 点击导航平滑滚动 */
 }
 
 body {
@@ -55,7 +52,9 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
-a:hover { text-decoration: underline; }
+a:hover {
+  text-decoration: underline;
+}
 
 /* ───────── NAVBAR ───────── */
 .site-header {
@@ -67,7 +66,7 @@ a:hover { text-decoration: underline; }
   transition: box-shadow .25s ease, background-color .2s ease;
 }
 
-/* 滚动后加阴影（scroll JS 会加上 .scrolled） */
+/* 滚动后加阴影 */
 .site-header.scrolled {
   box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
 }
@@ -93,7 +92,7 @@ a:hover { text-decoration: underline; }
   gap: 26px;
 }
 
-/* 导航栏基础样式 */
+/* 导航栏基础样式 + 动画底线 */
 .nav-link {
   position: relative;
   font-size: 16px;
@@ -106,7 +105,6 @@ a:hover { text-decoration: underline; }
   transition: color 0.25s ease;
 }
 
-/* 动画底线 */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -118,7 +116,6 @@ a:hover { text-decoration: underline; }
   transition: width 0.25s ease;
 }
 
-/* hover 或 active 时滑动底线显示 + 文字高亮色 */
 .nav-link:hover,
 .nav-link-active {
   color: var(--highlight);
@@ -129,7 +126,7 @@ a:hover { text-decoration: underline; }
   width: 100%;
 }
 
-/* 夜间模式更柔和（可根据你审美再调） */
+/* 夜间模式下导航文字 */
 :root[data-theme="dark"] .nav-link {
   color: rgba(255, 255, 255, 0.85);
 }
@@ -139,7 +136,7 @@ a:hover { text-decoration: underline; }
   color: var(--highlight);
 }
 
-/* ───────── PAGE ───────── */
+/* ───────── 页面布局 ───────── */
 .page {
   max-width: var(--max-width);
   margin: 24px auto 40px;
@@ -164,6 +161,7 @@ a:hover { text-decoration: underline; }
   column-gap: 32px;
   align-items: start;
 }
+
 @media (max-width: 860px) {
   .section-about {
     grid-template-columns: 1fr;
@@ -188,17 +186,34 @@ a:hover { text-decoration: underline; }
   font-size: 15px;
   color: var(--muted);
 }
-.about-contact a { font-size: 15px; }
+.about-contact a {
+  font-size: 15px;
+}
 
-/* ───────── HEADINGS ───────── */
-h1, h2, h3 { margin: 0 0 14px; }
-h1 { font-size: 30px; }
-h2 { font-size: 24px; margin-bottom: 16px; }
-h3 { font-size: 20px; margin-bottom: 8px; }
+/* ───────── 标题 ───────── */
+h1, h2, h3 {
+  margin: 0 0 14px;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
 
-/* ───────── LISTS ───────── */
-ul { margin: 0 0 10px 1.2em; padding: 0; }
-li { margin-bottom: 6px; }
+/* ───────── 列表 ───────── */
+ul {
+  margin: 0 0 10px 1.2em;
+  padding: 0;
+}
+li {
+  margin-bottom: 6px;
+}
 
 /* ───────── PROJECTS ───────── */
 .project-list {
@@ -211,7 +226,9 @@ li { margin-bottom: 6px; }
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
   column-gap: 24px;
+  margin-bottom: 16px;
 }
+
 @media (max-width: 760px) {
   .project {
     grid-template-columns: 1fr;
@@ -229,7 +246,7 @@ li { margin-bottom: 6px; }
 
 .project-body {
   border-left: 3px solid var(--accent-soft);
-  padding-left: 16px;
+  padding-left: 18px;   /* 和竖线拉开一点 */
 }
 
 .project-title {
@@ -239,80 +256,81 @@ li { margin-bottom: 6px; }
 
 .project-meta {
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 4px;   /* 导师信息和 description 更紧凑 */
   color: var(--muted);
 }
 
-/* ▼ 展开 summary 标题（箭头、对齐、加粗） */
+/* Short description 行（上面一行） */
+.project-details {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
 .project-details > summary {
   cursor: pointer;
   list-style: none;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  font-weight: 600;
+  padding: 2px 0;
+  font-size: 0.95em;
   color: var(--muted);
-  margin: 5px 0;
-  gap: 6px;
 }
 
-/* 去掉浏览器默认的小三角 */
+/* 去掉浏览器默认小三角 */
 .project-details > summary::-webkit-details-marker {
   display: none;
 }
 
-.project-details > summary::before {
-  content: "▸";
-  font-size: 1.2em;
-  color: inherit;
-  transition: transform .22s ease;
+/* 左边文案 */
+.summary-left {
+  font-weight: 600;
 }
-.project-details[open] > summary::before {
+
+/* 右侧箭头 */
+.summary-arrow {
+  margin-left: auto;
+  font-size: 0.9em;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.project-details[open] .summary-arrow {
   transform: rotate(90deg);
 }
 
-/* ▼ 折叠内容动画 */
+/* 摘要正文：更紧凑一点、颜色浅一点、整体略缩进 */
 .project-details-body {
-  margin-top: 6px;
-  padding-left: 2px;
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-6px);
-  overflow: hidden;
-  transition:
-    max-height .28s ease-out,
-    opacity .24s ease-out,
-    transform .24s ease-out;
-}
-.project-details[open] .project-details-body {
-  max-height: 600px;
-  opacity: 1;
-  transform: translateY(0);
+  margin-top: 4px;
+  padding-left: 4px;
+  color: var(--muted);
+  font-size: 0.95em;
+  line-height: 1.55;
 }
 
-/* 内部排版优化 */
-.project-details-body p { margin: 6px 0; }
-.project-details-body ul {
-  margin: 4px 0 0 1.1em;
-  padding-left: 0;
+.project-details-body p {
+  margin: 4px 0 6px;
 }
-.project-details-body li { margin-bottom: 2px; }
-.project-details-body strong {
-  display: inline-block;
+
+/* Presentation 行：紧挨着 description 下面一行 */
+.project-presentation {
+  margin-top: 2px;
+  font-size: 0.9em;
   color: var(--accent);
-  margin-bottom: 2px;
+  font-style: italic;
 }
 
-/* 发表信息块 */
+/* 保留原来的 project-extra（如果别的项目还在用） */
 .project-extra {
   margin-top: 6px;
   padding: 6px 10px;
   border-radius: 6px;
-  background-color: rgba(238, 108, 77, 0.16); /* 用 accent-soft 的透明版 */
+  background-color: rgba(238, 108, 77, 0.16);
   font-size: 0.95em;
   color: var(--muted);
 }
+
 :root[data-theme="dark"] .project-extra {
-  background-color: rgba(249, 115, 22, 0.18); /* 暗色下稍暖一点 */
+  background-color: rgba(249, 115, 22, 0.18);
 }
 
 .project-extra-line + .project-extra-line {
@@ -345,7 +363,7 @@ li { margin-bottom: 6px; }
   border-bottom-style: solid;
 }
 
-/* Publications & Education */
+/* Publications & Education 列表 */
 .pub-list,
 .edu-list {
   margin: 0;
@@ -389,46 +407,43 @@ li { margin-bottom: 6px; }
   font-size: 20px;
   margin-left: 12px;
   color: rgba(255, 255, 255, 0.9);
-  transition: opacity .2s ease;
+  transition: opacity .2s ease, transform 0.3s ease;
 }
+
 .theme-toggle:hover {
   opacity: 0.7;
 }
 
-/* 暗色模式下按钮变亮点 */
 :root[data-theme="dark"] .theme-toggle {
   color: #fff;
 }
 
-/* 🌙✨ 主题切换平滑动画 */
+.theme-toggle:active {
+  transform: rotate(180deg);
+}
+
+/* 主题切换整体平滑动画 */
 html, body {
-  transition: 
+  transition:
     background-color 0.25s ease,
     color 0.25s ease;
 }
 
-/* 卡片、分区背景同步动画 */
 .section-inner,
 .project-body,
 .site-header,
 .site-footer {
-  transition: 
+  transition:
     background-color 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease;
 }
 
-/* 链接、导师名字等细节 */
-a, .coauthor, .project-venue, .project-extra {
-  transition: 
+a,
+.coauthor,
+.project-venue,
+.project-extra {
+  transition:
     color 0.25s ease,
     background-color 0.25s ease;
-}
-
-.theme-toggle {
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle:active {
-  transform: rotate(180deg);
 }
