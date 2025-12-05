@@ -223,19 +223,24 @@ li {
   cursor: pointer;
   list-style: none;
   font-size: 1em;
-  font-weight: 600;              /* 加粗 */
+  font-weight: 600;
   color: var(--muted);
-  position: relative;
-  padding-left: 20px;
+
+  /* 关键：用 inline-flex 让箭头和文字垂直居中对齐 */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;              /* 箭头和文字之间留一点距离 */
 }
 
 .project-details > summary::before {
   content: "▸";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 2.0em;              /* 箭头 */
-  color: var(--accent);
+  font-size: 1.1em;
+  color: inherit;         /* 继承文字颜色，保持一致 */
+}
+
+/* 展开时换成向下箭头 */
+.project-details[open] > summary::before {
+  content: "▾";
 }
 
 .project-details[open] > summary::before {
