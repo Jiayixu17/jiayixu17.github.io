@@ -1,6 +1,6 @@
 :root {
   /* 以后只要改这几个颜色变量，就能换整站配色 */
-  --bg: #f1eee9;   /* 大背景色 */
+  --bg: #ffffff;   /* 大背景色 */
   --bg-card: #ffffff;
   --text: #272238;
   --muted: #3d5a80;
