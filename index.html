@@ -185,14 +185,45 @@
   </footer>
 
   <!-- 把脚本放在最后，保证能找到 .theme-toggle -->
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const header = document.querySelector('.site-header');
-      const toggleBtn = document.querySelector('.theme-toggle');
+<script>
+  (function () {
+    const root = document.documentElement;
+    const header = document.querySelector('.site-header');
+    const toggleBtn = document.querySelector('.theme-toggle');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-      if (!toggleBtn) return;
+    /* ========== 1. 导航高亮：根据 hash 来决定谁高亮 ========== */
 
+    function setActiveLinkByHash() {
+      const hash = window.location.hash || '#about';  // 默认 #about
+      navLinks.forEach(link => {
+        const target = link.getAttribute('href');
+        if (target === hash) {
+          link.classList.add('nav-link-active');
+        } else {
+          link.classList.remove('nav-link-active');
+        }
+      });
+    }
+
+    // 点击导航时，更新高亮（同时保留默认的锚点跳转）
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        // 等浏览器把 hash 更新完，再根据 hash 设置高亮
+        setTimeout(setActiveLinkByHash, 0);
+      });
+    });
+
+    // 手动改 hash / 其他方式跳转时也更新
+    window.addEventListener('hashchange', setActiveLinkByHash);
+
+    // 页面第一次加载时根据当前 hash 初始化一次
+    setActiveLinkByHash();
+
+
+    /* ========== 2. 夜间模式切换 ========== */
+
+    if (toggleBtn) {
       function shouldUseDark() {
         const prefersDark = window.matchMedia &&
           window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -220,18 +251,22 @@
         const next = current === 'dark' ? 'light' : 'dark';
         applyTheme(next);
       });
+    }
 
-      function onScroll() {
-        if (!header) return;
-        if (window.scrollY > 4) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+
+    /* ========== 3. 滚动阴影 ========== */
+
+    function onScroll() {
+      if (!header) return;
+      if (window.scrollY > 4) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
-      window.addEventListener('scroll', onScroll);
-      onScroll();
-    })();
-  </script>
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  })();
+</script>
 </body>
 </html>
