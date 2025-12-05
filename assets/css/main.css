@@ -1,12 +1,12 @@
 :root {
   /* 日间主题（默认） */
-  --bg: #f1eee9;
+  --bg: #ffffff;
   --bg-card: #ffffff;
   --text: #272238;
   --muted: #3d5a80;
   --accent: #293241;
   --accent-soft: #ee6c4d;
-  --border: #98c1d9;
+  --border: #ffffff;
   --highlight: #ee6c4d;
   --max-width: 1200px;
 }
