@@ -234,7 +234,7 @@ li {
 
 .project-details > summary::before {
   content: "▸";
-  font-size: 1.1em;
+  font-size: 2.0em;
   color: inherit;         /* 继承文字颜色，保持一致 */
 }
 
