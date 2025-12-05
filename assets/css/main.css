@@ -300,6 +300,7 @@ li { margin-bottom: 6px; }
 
 /* 合作者/导师链接 */
 .coauthor {
+  color: var(--accent);
   font-style: italic;
   border-bottom: 1px dashed var(--accent);
   padding-bottom: 1px;
