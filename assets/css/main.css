@@ -437,3 +437,17 @@ a,
     color 0.25s ease,
     background-color 0.25s ease;
 }
+
+/* 导师 / 合作者链接样式 */
+.coauthor {
+  font-style: italic;                       /* 斜体 */
+  color: var(--accent);                     /* 和整体主色一致 */
+  text-decoration: none;                    /* 去掉默认下划线 */
+  border-bottom: 1px dashed var(--accent);  /* 底部虚线 */
+  padding-bottom: 1px;
+}
+
+.coauthor:hover {
+  border-bottom-style: solid;               /* hover 时变实线 */
+  text-decoration: none;                    /* 防止全局 a:hover 再加下划线 */
+}
