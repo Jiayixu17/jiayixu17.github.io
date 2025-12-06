@@ -29,7 +29,7 @@
 
 .project-body {
   border-left: 3px solid var(--accent-soft);
-  padding-left: 18px;   /* 和竖线拉开一点 */
+  padding-left: 18px;              /* 和竖线拉开一点 */
 }
 
 .project-title {
@@ -39,13 +39,13 @@
 
 .project-meta {
   font-weight: 600;
-  margin-bottom: 4px;   /* 导师信息和 description 更紧凑 */
+  margin-bottom: 4px;              /* 导师信息和 description 更紧凑 */
   color: var(--muted);
 }
 
 /* 统一缩进：Short description + 摘要 + Presented at 对齐 */
 .project-details {
-  margin: 4px 0 2px 16px;   /* 整个 details 块整体右缩进一点 */
+  margin: 4px 0 2px 16px;          /* 整个 details 块整体右缩进一点 */
 }
 
 /* Short description 这一行 */
@@ -58,7 +58,7 @@
   font-size: 0.9em;
   color: var(--muted);
   gap: 5px;
-  margin: 0;                /* 不再额外左移，和 .project-details 对齐 */
+  margin: 0;                       /* 不再额外左移，和 .project-details 对齐 */
 }
 
 /* 去掉浏览器默认小三角 */
@@ -71,7 +71,7 @@
   font-weight: 600;
 }
 
-/* 右侧箭头：贴在文字右边，并加入平滑滑动+旋转动画 */
+/* 右侧箭头：靠文字右边，带滑动 + 旋转动画 */
 .summary-arrow {
   margin-left: 4px;
   font-size: 1.1em;
@@ -80,20 +80,20 @@
   transition: transform 0.22s ease;
 }
 
-/* 鼠标悬停时：轻轻往右滑一点（未展开状态） */
+/* 鼠标悬停时：轻轻往右滑一点 */
 .project-details:not([open]) summary:hover .summary-arrow {
   transform: translateX(3px) rotate(0deg);
 }
 
-/* 展开后：箭头旋转 90°，并略微位移，作为展开状态反馈 */
+/* 展开后：箭头旋转 90°，略微位移 */
 .project-details[open] .summary-arrow {
   transform: translateX(2px) rotate(90deg);
 }
 
-/* 摘要正文：比 summary 稍微再缩进一点，看起来有层次 */
+/* 摘要正文：比 Short description 再缩进一点，有层次 */
 .project-details-body {
   margin-top: 4px;
-  margin-left: 20px;       /* 比 Short description 多一点缩进 */
+  margin-left: 20px;               /* 比 Short description 多一点缩进 */
   padding-left: 4px;
   color: var(--muted);
   font-size: 0.95em;
@@ -107,13 +107,13 @@
 /* Presentation 行：和 Short description 同一缩进 */
 .project-presentation {
   margin-top: 2px;
-  margin-left: 16px;        /* 和 .project-details 一致 */
+  margin-left: 16px;               /* 和 .project-details 一致 */
   font-size: 0.9em;
   color: var(--accent);
   font-style: italic;
 }
 
-/* 如果还有其他项目在用 project-extra，就保留它 */
+/* 若其它项目还用到 project-extra，就保留 */
 .project-extra {
   margin-top: 6px;
   padding: 6px 10px;
