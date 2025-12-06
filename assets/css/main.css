@@ -1,3 +1,220 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* ───────── 主题变量 ───────── */
+:root {
+  /* 日间主题（默认） */
+  --bg: #ffffff;
+  --bg-card: #ffffff;
+  --text: #272238;
+  --muted: #3d5a80;
+  --accent: #293241;
+  --accent-soft: #ee6c4d;
+  --border: #e5e7eb;      /* 卡片边框，浅灰 */
+  --highlight: #ee6c4d;
+  --max-width: 1200px;
+}
+
+/* 夜间主题（data-theme="dark" 时覆盖） */
+:root[data-theme="dark"] {
+  --bg: #0b1020;
+  --bg-card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #1f2937;       /* 深灰蓝导航&主色 */
+  --accent-soft: #f97316;  /* 暖橙强调线 */
+  --border: #374151;
+  --highlight: #fb923c;    /* 高亮橙色 */
+}
+
+/* ───────── RESET ───────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ───────── NAVBAR ───────── */
+.site-header {
+  background-color: var(--accent);
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow .25s ease, background-color .2s ease;
+}
+
+/* 滚动后加阴影 */
+.site-header.scrolled {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.nav-main {
+  display: flex;
+  gap: 26px;
+}
+
+/* 导航栏基础样式 + 动画底线 */
+.nav-link {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 0;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--highlight);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: var(--highlight);
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+  width: 100%;
+}
+
+/* 夜间模式下导航文字 */
+:root[data-theme="dark"] .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+:root[data-theme="dark"] .nav-link:hover,
+:root[data-theme="dark"] .nav-link-active {
+  color: var(--highlight);
+}
+
+/* ───────── 页面布局 ───────── */
+.page {
+  max-width: var(--max-width);
+  margin: 24px auto 40px;
+  padding: 0 18px;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.section-inner {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 22px 26px;
+}
+
+/* ───────── ABOUT ───────── */
+.section-about {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  column-gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .section-about {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-contact {
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.about-contact a {
+  font-size: 15px;
+}
+
+/* ───────── 标题 ───────── */
+h1, h2, h3 {
+  margin: 0 0 14px;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+/* ───────── 列表 ───────── */
+ul {
+  margin: 0 0 10px 1.2em;
+  padding: 0;
+}
+li {
+  margin-bottom: 6px;
+}
+
 /* ───────── PROJECTS ───────── */
 .project-list {
   display: flex;
@@ -58,7 +275,7 @@
   font-size: 0.9em;
   color: var(--muted);
   gap: 5px;
-  margin: 0;                       /* 不再额外左移，和 .project-details 对齐 */
+  margin: 0;                       /* 和 .project-details 左边对齐 */
 }
 
 /* 去掉浏览器默认小三角 */
@@ -134,4 +351,89 @@
 .project-venue {
   font-style: italic;
   color: var(--accent);
+}
+
+/* Publications & Education 列表 */
+.pub-list,
+.edu-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* 强调文字 / badge */
+.text-highlight {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.badge-highlight {
+  display: inline-block;
+  background-color: var(--highlight);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+/* ───────── FOOTER ───────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  padding: 14px 18px 20px;
+  color: var(--muted);
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 夜间模式按钮 */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: opacity .2s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  color: #fff;
+}
+
+.theme-toggle:active {
+  transform: rotate(180deg);
+}
+
+/* 主题切换整体平滑动画 */
+html, body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.section-inner,
+.project-body,
+.site-header,
+.site-footer {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+a,
+.coauthor,
+.project-venue,
+.project-extra {
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
 }
