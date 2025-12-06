@@ -5,7 +5,7 @@ html {
 /* ───────── 主题变量 ───────── */
 :root {
   /* 日间主题（默认） */
-  --bg: #ffffff;
+  --bg: #e5e7eb;
   --bg-card: #ffffff;
   --text: #272238;
   --muted: #3d5a80;
@@ -291,7 +291,7 @@ li {
 /* 右侧箭头：靠文字右边，带滑动 + 旋转动画 */
 .summary-arrow {
   margin-left: 4px;
-  font-size: 1.1em;
+  font-size: 1.5em;
   color: var(--accent);
   transform: translateX(0) rotate(0deg);
   transition: transform 0.22s ease;
@@ -299,7 +299,7 @@ li {
 
 /* 鼠标悬停时：轻轻往右滑一点 */
 .project-details:not([open]) summary:hover .summary-arrow {
-  transform: translateX(3px) rotate(0deg);
+  transform: translateX(5px) rotate(0deg);
 }
 
 /* 展开后：箭头旋转 90°，略微位移 */
