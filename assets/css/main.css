@@ -292,7 +292,7 @@ li {
 /* 右侧箭头 */
 .summary-arrow {
   margin-left: auto;
-  font-size: 0.9em;
+  font-size: 1.5em;
   color: var(--accent);
   transition: transform 0.2s ease;
 }
