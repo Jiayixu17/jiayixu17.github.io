@@ -291,10 +291,10 @@ li {
 /* 右侧箭头：靠文字右边，带滑动 + 旋转动画 */
 .summary-arrow {
   margin-left: 4px;
-  font-size: 1.5em;
+  font-size: 1.67em;
   color: var(--accent);
   transform: translateX(0) rotate(0deg);
-  transition: transform 0.22s ease;
+  transition: transform 0.3s ease;
 }
 
 /* 鼠标悬停时：轻轻往右滑一点 */
