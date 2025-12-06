@@ -291,7 +291,7 @@ li {
 /* 右侧箭头：靠文字右边，带滑动 + 旋转动画 */
 .summary-arrow {
   margin-left: 4px;
-  font-size: 1.67em;
+  font-size: 1.35em;
   color: var(--accent);
   transform: translateX(0) rotate(0deg);
   transition: transform 0.3s ease;
@@ -299,7 +299,7 @@ li {
 
 /* 鼠标悬停时：轻轻往右滑一点 */
 .project-details:not([open]) summary:hover .summary-arrow {
-  transform: translateX(5px) rotate(0deg);
+  transform: translateX(4px) rotate(0deg);
 }
 
 /* 展开后：箭头旋转 90°，略微位移 */
