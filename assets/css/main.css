@@ -292,8 +292,10 @@ li {
 .summary-arrow {
   margin-left: 4px;
   font-size: 1.35em;
+  display: inline-block;
   color: var(--accent);
   transform: translateX(0) rotate(0deg);
+  transform-orign: 50% 50%;
   transition: transform 0.3s ease;
 }
 
