@@ -453,3 +453,16 @@ a,
   border-bottom-style: solid;               /* hover 时变实线 */
   text-decoration: none;                    /* 防止全局 a:hover 再加下划线 */
 }
+
+.project-links a {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--highlight);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--highlight);
+  padding-bottom: 1px;
+}
+
+.project-links a:hover {
+  border-bottom-style: solid;
+}
